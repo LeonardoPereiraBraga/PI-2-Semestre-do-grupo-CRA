@@ -1,0 +1,143 @@
+<nav>
+    <% if(isAdmin == 1) { %>
+        <div class="logo"> <a href="/funcionario/home"><img class="img-logo" src="/img/Logo.png" alt=""></a> </div>
+
+    <% } else { %>
+        <div class="logo"> <a href="/home"><img class="img-logo" src="/img/Logo.png" alt=""></a> </div>
+    <% } %>
+    
+    <div class="links">
+        <ul class="nav-items">
+            
+            
+            <!-- <li> Link2</li>
+            <li> Link3 </li> -->
+        </ul>
+    </div>
+    <div class="botoes">
+        <!-- <button class="cadastro btn btn-success"> Cadastrar </button>
+        <button class="cadastro btn btn-success"> Logar </button> -->
+        
+        
+        
+    </div>
+    <div class="foto-perfil">
+        <% if(session != undefined){ %>
+            <% if(isAdmin == 1) { %>
+                <img src="/img/admin.png" id="teste" alt="" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
+                <p style="text-align:justify;"> <%= session.nome %> </p>
+
+            <% } else { %>
+                <a href="/historico"> <img src="/img/historico.png" alt="" style="width: 30px; height: 30px; margin-bottom: 50px;"></a>
+                <img src="/uploads/<%= session.fileName %>" id="teste" alt="" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
+                <p style="text-align:justify;"> <%= session.nome %> </p>
+            <% } %>
+            
+            
+          
+        <% } %> 
+    </div>
+    <a class="btn btn-warning deslogar" href="/deslogar"> Deslogar </a>
+    
+    
+
+</nav>
+<script>
+    if(document.getElementById("teste") != undefined){
+        const login = document.getElementById("login")
+        const cadastro = document.getElementById("cadastro")
+        const postagem = document.getElementById("postagem")
+        login.setAttribute('class', 'hidden')
+        cadastro.setAttribute('class', 'hidden')
+       
+
+    }else{
+        
+    }
+</script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+    }
+body{
+    background-color: #F5F5F5;
+}
+.hidden{
+    display: none;
+}
+nav{
+    background-color: #2b4c7e;
+    display: flex;
+    justify-content: space-around;
+    font-family: "Poppins", sans-serif;
+    align-items: center;
+    height: 110px;
+}
+.nav-items{
+    list-style: none;
+    display: flex;
+    margin-top: 5%;
+    
+}
+.nav-items > li {
+    
+    padding-left: 20px;
+    
+}
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-logo {
+    width: 140px;
+    height: 140px;
+}
+.botoes button{
+    background-color: #457B9D;
+}
+.botoes button:hover{
+    background-color: #457B9D;
+}
+.efetuar-postagem{
+    color: white;
+    background-color: #567ebb;
+    border-color: #567ebb
+}
+.foto-perfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.foto-perfil p {
+    color: white;
+    margin-top: 7%;
+    margin-left: 4px;
+}
+.deslogar{
+    background-color: #567ebb;
+    border-color: #567ebb
+}
+.efetuar-postagem:hover {
+    color: white;
+    transition: 0.3s;
+}
+.nav-items > li > a:hover {
+    color: #457B9D;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.deslogar{
+    color: white;
+}
+.deslogar:hover {
+    color: #457B9D;
+    font-weight: bold;
+    transition: 0.3s;
+}
+</style>
+

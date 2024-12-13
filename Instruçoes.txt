@@ -1,0 +1,8 @@
+criar database chamada CRA no MySQL
+abrir o arquivo db.js e colocar a senha do seu MySQL
+usar o comando "npm i" no terminal do VsCode
+usar o comando "node index" para iniciar o projeto
+Abra o localhost no seu navegador: http://localhost:8080
+
+entrar no admin:
+INSERT INTO cra.funcionarios (id, nome, cpf, telefone, email, senha, createdAt, updatedAt) VALUES ('1', 'Admin', '11122233344', '123456789', 'admin@gmail.com', 'admin', '2024-12-12 17:55:30', '2024-12-12 17:55:30');

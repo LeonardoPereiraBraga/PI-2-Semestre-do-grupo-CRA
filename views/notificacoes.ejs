@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card shadow-0 border" style="background-color: #f0f2f5;">
+            <% if(postagens.length == 0){ %>
+                <h2>Nenhuma Postagem Encontrada</h2>
+              <% } %>
+            
+      
+              <!-- Comentário único -->
+               <% postagens.forEach(function(postagem){ %>
+
+               
+              <div class="card mb-4">
+                <div class="card-body">
+                  <p> Postagem: <%= postagem.nome %> </p>
+      
+                  <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-row align-items-center">
+                      <img src="/img/admin.png" alt="avatar" width="25" height="25" />
+                      
+                      <p class="small mb-0 ms-2">Administrador</p>
+                      
+                      <% if(postagem.aprovar == 0){ %>
+                        <span class="badge bg-warning text-dark" style="margin-left: 10px;">Status: Não Informado</span>
+                    <% } %>
+                    <% if(postagem.aprovar == 1){ %>
+                        <span class="badge bg-success" style="margin-left: 10px;">Status: Aprovado</span>
+                    <% } %>
+                    <% if(postagem.aprovar == 2){ %>
+                        <span class="badge bg-danger" style="margin-left: 10px;">Status: Recusado</span>
+                    <% } %>
+                    </div>
+                    <div class="d-flex flex-row align-items-center">
+                      
+                      <i class="far fa-thumbs-up mx-2 fa-xs text-body" style="margin-top: -0.16rem;"></i>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    
+   
+    
+</body>
+<script src="/js/bootstrap.min.js"></script>
+</html>

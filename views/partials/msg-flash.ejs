@@ -1,0 +1,54 @@
+
+
+<% if (successMessage.length > 0) { %>
+    <div class="alert alert-success">
+        <%= successMessage %>
+      </div>
+      <style>
+      .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0;
+      }
+      
+      .alert-success {
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+      }
+    </style>
+      
+    <!-- <div class="alert alert-success" style="margin: 0;"> <%= successMessage %> </div> -->
+    
+<% } %>
+
+<% if (errorMessage.length > 0) { %>
+    <div class="alert alert-danger">
+        <%= errorMessage %>
+      </div>
+      <style>
+      .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      
+      .alert-danger {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+      }
+    </style> 
+      
+    <!-- <div class="alert alert-danger" style="margin: 0;"> <%= errorMessage %> </div> -->
+    
+<% } %>
